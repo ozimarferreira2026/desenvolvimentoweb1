@@ -8,8 +8,8 @@ password :"root",
 database :"ecommerce"
 });
 // Dados que serão cadastrados
-const nome ="teclado";
-const preco =120.00;
+const nome ="mouse";
+const preco =75.50;
 
 
 //comando sql
