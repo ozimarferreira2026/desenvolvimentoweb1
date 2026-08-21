@@ -8,9 +8,9 @@ database :"escola"
 });
 // Dados que serão cadastrados
 const professores = [
-[1, 'Karen Andressa', 'Desenvolvimento Web 1'],
-[2, 'Juliano ', 'Modelagem Sistema UML'],
-[3, 'WELLINGTON', 'Linguagem SQL']
+['Karen Andressa', 'Desenvolvimento Web 1'],
+['Juliano ', 'Modelagem Sistema UML'],
+['WELLINGTON', 'Linguagem SQL']
     
     
 ];
@@ -30,7 +30,7 @@ const insert = "INSERT INTO professores(nome, disciplina) VALUES ?";
         // ID do professor que será excluido
 const id = 2;
 
-const deletar = "DELETE FROM  professor WHERE id = 2";
+const deletar = "DELETE FROM  professores WHERE id = ?";
 
 conexao.query(deletar, [id], function (erro, resultado) {
 
