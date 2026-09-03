@@ -1,0 +1,10 @@
+CREATE DATABASE jogos;
+USE jogos;
+CREATE TABLE jogos(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100),
+genero VARCHAR(50)
+);
+SELECT * FROM jogos;
+DELETE FROM jogos
+WHERE id = 3;

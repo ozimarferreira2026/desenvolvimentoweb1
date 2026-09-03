@@ -15,7 +15,7 @@ function cadastrarclientes() {
     const telefone = readline.question("Digite o  telefone dos clientes: ");
 
     const insert = "INSERT INTO clientes (nome, telefone) VALUES (?, ?)";
-    conexao.query(insert, [nome, genero], function (erro) {
+    conexao.query(insert, [nome, telefone],function (erro) {
         if (erro) {
             console.log("Erro ao cadastrar clientes.");
             console.log(erro);
@@ -23,7 +23,7 @@ function cadastrarclientes() {
             console.log("clientes cadastrado com sucesso!");
         }
         
-        // menu();
+        menu();
     });
 }
 
@@ -54,7 +54,7 @@ function listarclientes() {
 
 const sql = "SELECT * FROM clientes";
 
-conexao.query(sql, function (erro, jogos) {
+conexao.query(sql, function (erro, clientes) {
 
 if (erro) {
 
@@ -66,7 +66,7 @@ console.log("Erro ao buscar clientes.");
 console.log("\n--- CLIENTES---");
 
 
-jogos.forEach(function (clientes) {
+clientes.forEach(function (clientes) {
 
 console.log(
 
@@ -123,7 +123,6 @@ excluirclientes();
 
 
 } else if (opcao === 3) {
-
 
 listarclientes();
 
