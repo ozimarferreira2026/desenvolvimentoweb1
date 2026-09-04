@@ -6,13 +6,13 @@ const conexao = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "root",
-    database: "filmes"
+    database: "cadastrarfilmes"
 });
 
 //função para cadastrar filmes
 function cadastrarfilmes() {
     const titulo= readline.question("Digite o titulo: ");
-    const ano = readline.question("Digite o  ano: ");
+    const ano = readline.question("Digite o  ano do filme: ");
 
     const insert = "INSERT INTO filmes (titulo, ano) VALUES (?, ?)";
     conexao.query(insert, [titulo, ano],function (erro) {
@@ -21,9 +21,9 @@ function cadastrarfilmes() {
             console.log(erro);
         }else {
             console.log("filmes cadastrado com sucesso!");
-        }1
+        }
         
-        1
+        
         menu();
     });
 }
@@ -38,6 +38,7 @@ function excluirfilmes() {
 
         if(erro) {
             console.log("Erro ao excluir os filmes.");
+            console.log(erro)
      } else if (resultado.affectedRows === 0) {
         console.log("filmes não encontrado.");
      }else {
@@ -49,11 +50,32 @@ function excluirfilmes() {
 });
 
 }
+
+// filme atualizado
+function atualizarfilme(){
+    const id = readline.questionInt(" Informe o id do filme");
+    const titulo = readline.question("Informe o novo titulo do filme:");
+    const ano = readline.question("Informe o novo ano do filme:");
+
+    const update = "UPDATE filmes SET titulo = ? ano = ? WHERE id = ?";
+    conexao.query(update, [titulo, ano, id], function(erro, resultado){
+        if(erro){
+            console.log("Erro ao atualizar o filme.");
+            console.log(erro);
+        }else if(resultado.affectedRow===0){
+            console.log("Filme não encontrado.")
+        }else{
+            console.log("filme atualizado com sucesso!");
+        }
+        menu();
+    });
+        
+    }
 // Função para listar filmes
 
 function listarfilmes() {
 
-const sql = "SELECT * FROM filmes";
+const sql = "SELECT * FROM filmes ORDER BY titulo ASC";
 
 conexao.query(sql, function (erro, filmes) {
 
