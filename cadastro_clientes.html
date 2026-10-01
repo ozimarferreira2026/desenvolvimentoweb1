@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+     <form >
+      <form method="post" action="/home.html">
+        <h2> Bem-vindo Desenvolvimento WEB 1! </h2>
+        <p>Insira seus dados para logar</p>
+
+       <label for="nome">Insira seu nome completo:</label> <br>
+        <input type="text" name="login" id="nome" placeholder="Insira seu nome" required> <br> <br>
+        
+        <label for="email">Insira seu email:</label> <br>
+        <input type="email" name="email" id="email"placeholder="Insira seu email" required> <br> <br>
+
+        <label>Insira sua senha</label> <br>
+        <input type="password" name="pwd" placeholder="Insira sua senha" required> <br> <br>  
+
+         
+        <p>Qual é o seu sexo?</p>
+        <input type="radio"
+        id="feminino"
+        required>
+        <label for="feminino">Feminino</label>
+        <br>
+         <input type="radio"
+        id="masculino"
+        required>
+        <label> Masculino</label>
+        <br>
+         <input type="radio"
+                id="nao-informar"
+                required>
+            <label> prefiro nao informar</label> <br> <br>
+            
+            <p>Qual sua cor preferida?</p>
+             <input type="color" name="favcor" value="#0000FF">
+            <br> <br>
+             <label>Comentário ou observação sobre o cadastro</label><br>
+            <textarea name="placeholder="anotacão"></textarea> <br>
+             <input type="submit">
+     </form>
+
+</body>
+</html>
